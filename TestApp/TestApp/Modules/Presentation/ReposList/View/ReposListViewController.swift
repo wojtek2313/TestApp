@@ -7,23 +7,25 @@
 
 import UIKit
 
-class ReposListViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+class ReposListViewController: BaseViewController {
+    
+    // MARK: - Private Properties
+    
+    private let rootView: ReposListModule.View
+    private let viewModel: ReposListModule.ViewModel
+    
+    // MARK: - Initializers
+    
+    init(rootView: ReposListModule.View, viewModel: ReposListModule.ViewModel) {
+        self.rootView = rootView
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Lifetime Methods
+    
+    override func loadView() {
+        super.loadView()
+        createView(rootView)
     }
-    */
-
 }

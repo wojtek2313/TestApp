@@ -11,6 +11,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var navigationController: UINavigationController?
+    
+    // MARK: - Private Properties
+    
+    private lazy var reposListViewController: ReposListViewController? = { [weak self] in
+        guard let self = self else { return nil }
+        let reposListViewModel = ReposListViewModel()
+        let reposListView = ReposListView(viewModel: reposListViewModel)
+        let reposListViewController = ReposListViewController(rootView: reposListView, viewModel: reposListViewModel)
+        return reposListViewController
+    }()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         startAppFlow(atScene: scene)
@@ -22,10 +32,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        navigationController = UINavigationController(rootViewController: ReposListViewController())
-        navigationController?.isNavigationBarHidden = true
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
+        if let reposListViewController = reposListViewController {
+            navigationController = UINavigationController(rootViewController: reposListViewController)
+            navigationController?.isNavigationBarHidden = true
+            window?.rootViewController = navigationController
+            window?.makeKeyAndVisible()
+        }
     }
 }
 
