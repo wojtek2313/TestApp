@@ -26,12 +26,17 @@ class ReposListViewModel: ReposListModule.ViewModel {
     private var reachability: Reachability
     private var isNetworkReachable: BehaviorRelay<Bool?> { reachability.isReachable }
     
+    private let gitHubRepoManager = ReposNetworkingManger(repoType: .gitHub)
+    private let bitbucketRepoManager = ReposNetworkingManger(repoType: .bitbucket)
+    
     // MARK: - Initializers
     
     init(reachability: Reachability) {
         self.reachability = reachability
         super.init()
         bindInternetReachability()
+        fetchBitbucketRepo()
+        fetchGitHubRepo()
     }
     
     // MARK: - Private Methods
@@ -48,6 +53,22 @@ class ReposListViewModel: ReposListModule.ViewModel {
                     self?.internetConnectionError?()
                 }
             }).disposed(by: disposeBag)
+    }
+    
+    private func fetchBitbucketRepo() {
+        bitbucketRepoManager.fetchRepos(success: { [weak self] model in
+            print(model)
+        }, error: { [weak self] error in
+            print(error)
+        })
+    }
+    
+    private func fetchGitHubRepo() {
+        gitHubRepoManager.fetchRepos(success: { [weak self] model in
+            print(model)
+        }, error: { [weak self] error in
+            print(error)
+        })
     }
     
 }
