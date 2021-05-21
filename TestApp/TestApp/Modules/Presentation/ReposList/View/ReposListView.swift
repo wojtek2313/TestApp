@@ -17,7 +17,7 @@ protocol ReposListViewProtocol {}
 class ReposListView: ReposListModule.View {
     // MARK: - UI
     
-    private let tableView: UITableView = .init(tableViewCells: [])
+    private let tableView: UITableView = .init(tableViewCells: [RepoDescriptionTableViewCell.self])
     
     // MARK: - Private Properties
     
