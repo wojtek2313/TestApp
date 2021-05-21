@@ -21,6 +21,7 @@
 		2E84F42A26583D6000BEA23B /* ReposListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84F42926583D6000BEA23B /* ReposListModule.swift */; };
 		2E84F42D26583DCD00BEA23B /* ReposListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84F42C26583DCD00BEA23B /* ReposListViewModel.swift */; };
 		2E84F431265840C600BEA23B /* UIColor+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84F430265840C600BEA23B /* UIColor+Defaults.swift */; };
+		2E84F4362658462F00BEA23B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84F4352658462F00BEA23B /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		2E84F42926583D6000BEA23B /* ReposListModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListModule.swift; sourceTree = "<group>"; };
 		2E84F42C26583DCD00BEA23B /* ReposListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListViewModel.swift; sourceTree = "<group>"; };
 		2E84F430265840C600BEA23B /* UIColor+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Defaults.swift"; sourceTree = "<group>"; };
+		2E84F4352658462F00BEA23B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		375137E3B4A9476150555489 /* Pods_TestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CE28B240B6B6632D0856B6A /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
 		AC4014897579C215F30ACDB9 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				2E84F4082658360A00BEA23B /* Presentation */,
+				2E84F4332658460B00BEA23B /* Network */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -213,6 +216,22 @@
 				2E84F430265840C600BEA23B /* UIColor+Defaults.swift */,
 			);
 			path = UIColor;
+			sourceTree = "<group>";
+		};
+		2E84F4332658460B00BEA23B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2E84F4342658461600BEA23B /* Reachability */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2E84F4342658461600BEA23B /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				2E84F4352658462F00BEA23B /* Reachability.swift */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		4BE2E9EBCACF6BC411AD7FAB /* Pods */ = {
@@ -353,6 +372,7 @@
 				2E84F40D2658365B00BEA23B /* ReposListViewController.swift in Sources */,
 				2E84F42D26583DCD00BEA23B /* ReposListViewModel.swift in Sources */,
 				2E84F3DC2658333100BEA23B /* AppDelegate.swift in Sources */,
+				2E84F4362658462F00BEA23B /* Reachability.swift in Sources */,
 				2E84F3DE2658333100BEA23B /* SceneDelegate.swift in Sources */,
 				2E84F4022658355D00BEA23B /* BaseView.swift in Sources */,
 				2E84F431265840C600BEA23B /* UIColor+Defaults.swift in Sources */,

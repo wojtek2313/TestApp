@@ -11,12 +11,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var navigationController: UINavigationController?
+    var reachability = Reachability()
     
     // MARK: - Private Properties
     
     private lazy var reposListViewController: ReposListViewController? = { [weak self] in
         guard let self = self else { return nil }
-        let reposListViewModel = ReposListViewModel()
+        let reposListViewModel = ReposListViewModel(reachability: reachability)
         let reposListView = ReposListView(viewModel: reposListViewModel)
         let reposListViewController = ReposListViewController(rootView: reposListView, viewModel: reposListViewModel)
         return reposListViewController
