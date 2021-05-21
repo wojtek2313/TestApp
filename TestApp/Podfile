@@ -1,0 +1,15 @@
+platform :ios, '13.0'
+
+def basic_pods
+   pod 'RxSwift'
+   pod 'RxCocoa'
+   pod 'NVActivityIndicatorView'
+   pod 'SnapKit'
+   pod 'Alamofire'
+   pod 'Nuke'
+end
+
+target 'TestApp' do
+   use_frameworks!
+   basic_pods
+end
