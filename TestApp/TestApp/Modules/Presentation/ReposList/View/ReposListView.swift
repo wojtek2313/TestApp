@@ -29,6 +29,21 @@ class ReposListView: ReposListModule.View {
         self.viewModel = viewModel
         super.init(frame: .zero)
         setupView()
+        setupObservers()
+    }
+}
+
+// MARK: - Rx
+
+extension ReposListView {
+    private func setupObservers() {
+        bindUserModels()
+    }
+    
+    private func bindUserModels() {
+        viewModel.userModels.bind(to: tableView.rx.items(cellIdentifier: String(describing: RepoDescriptionTableViewCell.self), cellType: RepoDescriptionTableViewCell.self)) { index, model, cell in
+            cell.configure(withModel: model)
+        }.disposed(by: viewModel.disposeBag)
     }
 }
 

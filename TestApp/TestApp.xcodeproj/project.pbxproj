@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F4CBA9AF7BF19E1A9F5D661 /* Pods_TestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375137E3B4A9476150555489 /* Pods_TestApp.framework */; };
+		2E6E8D742658DC820027DB06 /* UIImageView+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E8D732658DC820027DB06 /* UIImageView+Defaults.swift */; };
 		2E84F3DC2658333100BEA23B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84F3DB2658333100BEA23B /* AppDelegate.swift */; };
 		2E84F3DE2658333100BEA23B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84F3DD2658333100BEA23B /* SceneDelegate.swift */; };
 		2E84F3E02658333100BEA23B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84F3DF2658333100BEA23B /* BaseViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E6E8D732658DC820027DB06 /* UIImageView+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Defaults.swift"; sourceTree = "<group>"; };
 		2E84F3D82658333100BEA23B /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E84F3DB2658333100BEA23B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E84F3DD2658333100BEA23B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E6E8D722658DC680027DB06 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				2E6E8D732658DC820027DB06 /* UIImageView+Defaults.swift */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
 		2E84F3CF2658333100BEA23B = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		2E84F3F02658334400BEA23B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2E6E8D722658DC680027DB06 /* UIImageView */,
 				2EB102122658517E00FB02BA /* UILabel */,
 				2E84F43C26584ED100BEA23B /* UIView */,
 				2E84F43826584DE300BEA23B /* UITableView */,
@@ -496,6 +507,7 @@
 				2EB102142658519A00FB02BA /* UILabel+Defaults.swift in Sources */,
 				2E84F4362658462F00BEA23B /* Reachability.swift in Sources */,
 				2E84F3DE2658333100BEA23B /* SceneDelegate.swift in Sources */,
+				2E6E8D742658DC820027DB06 /* UIImageView+Defaults.swift in Sources */,
 				2E84F4022658355D00BEA23B /* BaseView.swift in Sources */,
 				2EB1022D265855E700FB02BA /* ReposNetworkingManager.swift in Sources */,
 				2E84F43E26584EE800BEA23B /* UIView+Defaults.swift in Sources */,

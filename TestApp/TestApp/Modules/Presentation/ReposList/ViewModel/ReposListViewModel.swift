@@ -12,6 +12,7 @@ import RxCocoa
 
 protocol ReposListViewModelProtocol {
     var internetConnectionError: (() -> Void)? { get set }
+    var userModels: BehaviorRelay<[UserModel]> { get set }
 }
 
 // MARK: - Class
@@ -20,6 +21,11 @@ class ReposListViewModel: ReposListModule.ViewModel {
     // MARK: - Navigation CallBacks
     
     public var internetConnectionError: (() -> Void)?
+    public var errorAppeared: (() -> Void)?
+    
+    // MARK: - Public Properties
+    
+    public var userModels = BehaviorRelay<[UserModel]>(value: [])
     
     // MARK: - Private Properties
     
@@ -57,17 +63,23 @@ class ReposListViewModel: ReposListModule.ViewModel {
     
     private func fetchBitbucketRepo() {
         bitbucketRepoManager.fetchRepos(success: { [weak self] model in
-            print(model)
+            guard let self = self else { return }
+            var userModels = self.userModels.value
+            userModels.append(contentsOf: model)
+            self.userModels.accept(userModels)
         }, error: { [weak self] error in
-            print(error)
+            self?.errorAppeared?()
         })
     }
     
     private func fetchGitHubRepo() {
         gitHubRepoManager.fetchRepos(success: { [weak self] model in
-            print(model)
+            guard let self = self else { return }
+            var userModels = self.userModels.value
+            userModels.append(contentsOf: model)
+            self.userModels.accept(userModels)
         }, error: { [weak self] error in
-            print(error)
+            self?.errorAppeared?()
         })
     }
     
