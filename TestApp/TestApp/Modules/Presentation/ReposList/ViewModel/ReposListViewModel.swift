@@ -12,6 +12,8 @@ import RxCocoa
 
 protocol ReposListViewModelProtocol {
     var internetConnectionError: (() -> Void)? { get set }
+    var errorAppeared: (() -> Void)? { get set }
+    var onCellTapped: ((UserModel) -> Void)? { get set }
     var userModels: BehaviorRelay<[UserModel]> { get set }
     var areReposSorted: BehaviorRelay<Bool> { get set }
 }
@@ -23,6 +25,7 @@ class ReposListViewModel: ReposListModule.ViewModel {
     
     public var internetConnectionError: (() -> Void)?
     public var errorAppeared: (() -> Void)?
+    public var onCellTapped: ((UserModel) -> Void)?
     
     // MARK: - Public Properties
     

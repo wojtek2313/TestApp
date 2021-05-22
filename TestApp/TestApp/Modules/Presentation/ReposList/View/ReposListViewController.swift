@@ -21,6 +21,7 @@ class ReposListViewController: BaseViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         setupAlerts()
+        setupNavigation()
     }
     
     // MARK: - Lifetime Methods
@@ -31,6 +32,24 @@ class ReposListViewController: BaseViewController {
     }
 }
 
+// MARK: - Navigation
+
+extension ReposListViewController {
+    private func setupNavigation() {
+        viewModel.onCellTapped = { [weak self] model in
+            self?.createRepoDetailsView(model)
+        }
+    }
+    
+    private func createRepoDetailsView(_ model: UserModel) {
+        let repoDetailsViewModel = RepoDetailsViewModel(userModel: model)
+        let repoDetailsView = RepoDetailsView(viewModel: repoDetailsViewModel)
+        let viewController = RepoDetailsViewController(rootView: repoDetailsView, viewModel: repoDetailsViewModel)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+
 // MARK: - Alerts
 
 extension ReposListViewController {
@@ -40,10 +59,20 @@ extension ReposListViewController {
                 self?.showNoInternetAlert()
             }
         }
+        
+        self.viewModel.errorAppeared = { [weak self] in
+            self?.showFetchingErrorAppeared()
+        }
     }
     
     private func showNoInternetAlert() {
         let alert = UIAlertController(title: "Internet Connection Error", message: "Something is wrong with your Internet connection, please try to relaunch the app.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    private func showFetchingErrorAppeared() {
+        let alert = UIAlertController(title: "Something Went Wrong!", message: "Something was wrong on time of fetching data.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }

@@ -12,6 +12,10 @@
 		2E6E8D812658FF7B0027DB06 /* CustomNavigationBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E8D7F2658FF7B0027DB06 /* CustomNavigationBarType.swift */; };
 		2E6E8D822658FF7B0027DB06 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E8D802658FF7B0027DB06 /* CustomNavigationBar.swift */; };
 		2E6E8D862658FFD10027DB06 /* UIButton+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E8D852658FFD10027DB06 /* UIButton+Defaults.swift */; };
+		2E6E8D8F2659046F0027DB06 /* RepoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E8D8E2659046F0027DB06 /* RepoDetailsViewController.swift */; };
+		2E6E8D922659048F0027DB06 /* RepoDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E8D912659048F0027DB06 /* RepoDetailsViewModel.swift */; };
+		2E6E8D96265904A60027DB06 /* RepoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E8D95265904A60027DB06 /* RepoDetailsView.swift */; };
+		2E6E8D992659058E0027DB06 /* RepoDetailsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E8D982659058E0027DB06 /* RepoDetailsModule.swift */; };
 		2E84F3DC2658333100BEA23B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84F3DB2658333100BEA23B /* AppDelegate.swift */; };
 		2E84F3DE2658333100BEA23B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84F3DD2658333100BEA23B /* SceneDelegate.swift */; };
 		2E84F3E02658333100BEA23B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84F3DF2658333100BEA23B /* BaseViewController.swift */; };
@@ -44,6 +48,10 @@
 		2E6E8D7F2658FF7B0027DB06 /* CustomNavigationBarType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarType.swift; sourceTree = "<group>"; };
 		2E6E8D802658FF7B0027DB06 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		2E6E8D852658FFD10027DB06 /* UIButton+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Defaults.swift"; sourceTree = "<group>"; };
+		2E6E8D8E2659046F0027DB06 /* RepoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsViewController.swift; sourceTree = "<group>"; };
+		2E6E8D912659048F0027DB06 /* RepoDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsViewModel.swift; sourceTree = "<group>"; };
+		2E6E8D95265904A60027DB06 /* RepoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsView.swift; sourceTree = "<group>"; };
+		2E6E8D982659058E0027DB06 /* RepoDetailsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsModule.swift; sourceTree = "<group>"; };
 		2E84F3D82658333100BEA23B /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E84F3DB2658333100BEA23B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E84F3DD2658333100BEA23B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +127,32 @@
 				2E6E8D852658FFD10027DB06 /* UIButton+Defaults.swift */,
 			);
 			path = UIButton;
+			sourceTree = "<group>";
+		};
+		2E6E8D8A265904110027DB06 /* RepoDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2E6E8D8C265904280027DB06 /* ViewModel */,
+				2E6E8D8B265904220027DB06 /* View */,
+			);
+			path = RepoDetails;
+			sourceTree = "<group>";
+		};
+		2E6E8D8B265904220027DB06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E6E8D8E2659046F0027DB06 /* RepoDetailsViewController.swift */,
+				2E6E8D95265904A60027DB06 /* RepoDetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E6E8D8C265904280027DB06 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2E6E8D912659048F0027DB06 /* RepoDetailsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		2E84F3CF2658333100BEA23B = {
@@ -243,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				2E84F4092658361B00BEA23B /* ReposList */,
+				2E6E8D8A265904110027DB06 /* RepoDetails */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -271,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				2E84F42926583D6000BEA23B /* ReposListModule.swift */,
+				2E6E8D982659058E0027DB06 /* RepoDetailsModule.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -294,9 +330,9 @@
 		2E84F4332658460B00BEA23B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2EB1021F2658549F00FB02BA /* Model */,
 				2EB1022B265855D000FB02BA /* Manager */,
 				2EB102162658542800FB02BA /* Type */,
-				2EB1021F2658549F00FB02BA /* Model */,
 				2E84F4342658461600BEA23B /* Reachability */,
 			);
 			path = Network;
@@ -528,7 +564,10 @@
 				2EB102182658543F00FB02BA /* RepoType.swift in Sources */,
 				2EB102292658555B00FB02BA /* DescriptionCellType.swift in Sources */,
 				2EB10221265854C500FB02BA /* BitbucketRepoApiModel.swift in Sources */,
+				2E6E8D992659058E0027DB06 /* RepoDetailsModule.swift in Sources */,
+				2E6E8D96265904A60027DB06 /* RepoDetailsView.swift in Sources */,
 				2E84F43A26584DFA00BEA23B /* UITableView+Defaults.swift in Sources */,
+				2E6E8D8F2659046F0027DB06 /* RepoDetailsViewController.swift in Sources */,
 				2EB10210265850C100FB02BA /* RepoDescriptionTableViewCell.swift in Sources */,
 				2E84F42726583CE900BEA23B /* ReposListView.swift in Sources */,
 				2E84F406265835BD00BEA23B /* BaseViewModel.swift in Sources */,
@@ -546,6 +585,7 @@
 				2E84F4022658355D00BEA23B /* BaseView.swift in Sources */,
 				2EB1022D265855E700FB02BA /* ReposNetworkingManager.swift in Sources */,
 				2E6E8D862658FFD10027DB06 /* UIButton+Defaults.swift in Sources */,
+				2E6E8D922659048F0027DB06 /* RepoDetailsViewModel.swift in Sources */,
 				2E84F43E26584EE800BEA23B /* UIView+Defaults.swift in Sources */,
 				2E84F431265840C600BEA23B /* UIColor+Defaults.swift in Sources */,
 			);

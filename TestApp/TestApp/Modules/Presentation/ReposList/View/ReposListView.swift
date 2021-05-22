@@ -41,6 +41,7 @@ extension ReposListView {
     private func setupObservers() {
         bindActivityIndicator(viewModel)
         bindUserModels()
+        bindSelectedModel()
         bindSortButton()
     }
     
@@ -48,6 +49,14 @@ extension ReposListView {
         viewModel.userModels.bind(to: tableView.rx.items(cellIdentifier: String(describing: RepoDescriptionTableViewCell.self), cellType: RepoDescriptionTableViewCell.self)) { index, model, cell in
             cell.configure(withModel: model)
         }.disposed(by: viewModel.disposeBag)
+    }
+    
+    private func bindSelectedModel() {
+        tableView.rx.modelSelected(UserModel.self)
+            .subscribe(onNext: { [weak self] model in
+                guard let self = self else { return }
+                self.viewModel.onCellTapped?(model)
+            }).disposed(by: viewModel.disposeBag)
     }
     
     private func bindSortButton() {
