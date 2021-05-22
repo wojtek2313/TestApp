@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1F4CBA9AF7BF19E1A9F5D661 /* Pods_TestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375137E3B4A9476150555489 /* Pods_TestApp.framework */; };
 		2E6E8D742658DC820027DB06 /* UIImageView+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E8D732658DC820027DB06 /* UIImageView+Defaults.swift */; };
+		2E6E8D812658FF7B0027DB06 /* CustomNavigationBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E8D7F2658FF7B0027DB06 /* CustomNavigationBarType.swift */; };
+		2E6E8D822658FF7B0027DB06 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E8D802658FF7B0027DB06 /* CustomNavigationBar.swift */; };
+		2E6E8D862658FFD10027DB06 /* UIButton+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E8D852658FFD10027DB06 /* UIButton+Defaults.swift */; };
 		2E84F3DC2658333100BEA23B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84F3DB2658333100BEA23B /* AppDelegate.swift */; };
 		2E84F3DE2658333100BEA23B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84F3DD2658333100BEA23B /* SceneDelegate.swift */; };
 		2E84F3E02658333100BEA23B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84F3DF2658333100BEA23B /* BaseViewController.swift */; };
@@ -38,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		2E6E8D732658DC820027DB06 /* UIImageView+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Defaults.swift"; sourceTree = "<group>"; };
+		2E6E8D7F2658FF7B0027DB06 /* CustomNavigationBarType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarType.swift; sourceTree = "<group>"; };
+		2E6E8D802658FF7B0027DB06 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		2E6E8D852658FFD10027DB06 /* UIButton+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Defaults.swift"; sourceTree = "<group>"; };
 		2E84F3D82658333100BEA23B /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E84F3DB2658333100BEA23B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E84F3DD2658333100BEA23B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +96,31 @@
 			path = UIImageView;
 			sourceTree = "<group>";
 		};
+		2E6E8D792658FF3E0027DB06 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2E6E8D7E2658FF660027DB06 /* NavigationBar */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2E6E8D7E2658FF660027DB06 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				2E6E8D802658FF7B0027DB06 /* CustomNavigationBar.swift */,
+				2E6E8D7F2658FF7B0027DB06 /* CustomNavigationBarType.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		2E6E8D842658FFB80027DB06 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				2E6E8D852658FFD10027DB06 /* UIButton+Defaults.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
 		2E84F3CF2658333100BEA23B = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +156,7 @@
 		2E84F3F02658334400BEA23B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2E6E8D842658FFB80027DB06 /* UIButton */,
 				2E6E8D722658DC680027DB06 /* UIImageView */,
 				2EB102122658517E00FB02BA /* UILabel */,
 				2E84F43C26584ED100BEA23B /* UIView */,
@@ -155,6 +187,7 @@
 		2E84F3F32658336A00BEA23B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				2E6E8D792658FF3E0027DB06 /* Components */,
 				2EB1021A2658546F00FB02BA /* Model */,
 				2E84F3F8265833AB00BEA23B /* ViewModel */,
 				2E84F3F7265833A500BEA23B /* View */,
@@ -491,6 +524,7 @@
 			files = (
 				2EB102312658564000FB02BA /* NetworkModule.swift in Sources */,
 				2E84F3E02658333100BEA23B /* BaseViewController.swift in Sources */,
+				2E6E8D812658FF7B0027DB06 /* CustomNavigationBarType.swift in Sources */,
 				2EB102182658543F00FB02BA /* RepoType.swift in Sources */,
 				2EB102292658555B00FB02BA /* DescriptionCellType.swift in Sources */,
 				2EB10221265854C500FB02BA /* BitbucketRepoApiModel.swift in Sources */,
@@ -502,6 +536,7 @@
 				2E84F40D2658365B00BEA23B /* ReposListViewController.swift in Sources */,
 				2EB1021C2658547C00FB02BA /* UserModel.swift in Sources */,
 				2EB10225265854E900FB02BA /* GitHubRepoApiModel.swift in Sources */,
+				2E6E8D822658FF7B0027DB06 /* CustomNavigationBar.swift in Sources */,
 				2E84F42D26583DCD00BEA23B /* ReposListViewModel.swift in Sources */,
 				2E84F3DC2658333100BEA23B /* AppDelegate.swift in Sources */,
 				2EB102142658519A00FB02BA /* UILabel+Defaults.swift in Sources */,
@@ -510,6 +545,7 @@
 				2E6E8D742658DC820027DB06 /* UIImageView+Defaults.swift in Sources */,
 				2E84F4022658355D00BEA23B /* BaseView.swift in Sources */,
 				2EB1022D265855E700FB02BA /* ReposNetworkingManager.swift in Sources */,
+				2E6E8D862658FFD10027DB06 /* UIButton+Defaults.swift in Sources */,
 				2E84F43E26584EE800BEA23B /* UIView+Defaults.swift in Sources */,
 				2E84F431265840C600BEA23B /* UIColor+Defaults.swift in Sources */,
 			);

@@ -13,6 +13,7 @@ import RxCocoa
 protocol ReposListViewModelProtocol {
     var internetConnectionError: (() -> Void)? { get set }
     var userModels: BehaviorRelay<[UserModel]> { get set }
+    var areReposSorted: BehaviorRelay<Bool> { get set }
 }
 
 // MARK: - Class
@@ -26,6 +27,7 @@ class ReposListViewModel: ReposListModule.ViewModel {
     // MARK: - Public Properties
     
     public var userModels = BehaviorRelay<[UserModel]>(value: [])
+    public var areReposSorted = BehaviorRelay<Bool>(value: false)
     
     // MARK: - Private Properties
     
@@ -44,6 +46,7 @@ class ReposListViewModel: ReposListModule.ViewModel {
         bindInternetReachability()
         fetchBitbucketRepo()
         fetchGitHubRepo()
+        bindReposSorted()
     }
     
     // MARK: - Private Methods
@@ -88,6 +91,15 @@ class ReposListViewModel: ReposListModule.ViewModel {
             self?.showIndicator(isVisible: false)
             self?.errorAppeared?()
         })
+    }
+    
+    private func bindReposSorted() {
+        areReposSorted.subscribe(onNext: { [weak self] sorted in
+            guard let self = self else { return }
+            var userModelArray = self.userModels.value
+            sorted ? userModelArray.sort { $0.repoName < $1.repoName } : userModelArray.shuffle()
+            self.userModels.accept(userModelArray)
+        }).disposed(by: disposeBag)
     }
     
 }

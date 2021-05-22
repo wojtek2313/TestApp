@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 class RepoDescriptionTableViewCell: UITableViewCell {
     // MARK: - UI
@@ -28,6 +29,13 @@ class RepoDescriptionTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Lifetime Methods
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        Nuke.cancelRequest(for: avatarImageView)
     }
     
     // MARK: - Public Methods
