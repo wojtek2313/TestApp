@@ -37,6 +37,7 @@ class ReposListView: ReposListModule.View {
 
 extension ReposListView {
     private func setupObservers() {
+        bindActivityIndicator(viewModel)
         bindUserModels()
     }
     
@@ -56,12 +57,16 @@ extension ReposListView {
     }
     
     private func addSubviews() {
-        addSubviews([tableView])
+        addSubviews([tableView, activityIndicator])
     }
     
     private func addConstraints() {
         tableView.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalToSuperview()
+        }
+        activityIndicator.snp.makeConstraints {
+            $0.size.equalTo(45)
+            $0.center.equalToSuperview()
         }
     }
 }

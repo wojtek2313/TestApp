@@ -40,6 +40,7 @@ class ReposListViewModel: ReposListModule.ViewModel {
     init(reachability: Reachability) {
         self.reachability = reachability
         super.init()
+        showIndicator(isVisible: true)
         bindInternetReachability()
         fetchBitbucketRepo()
         fetchGitHubRepo()
@@ -52,10 +53,12 @@ class ReposListViewModel: ReposListModule.ViewModel {
             .skip(1)
             .subscribe(onNext: { [weak self] isReachable in
                 guard let isReachable = isReachable else {
+                    self?.showIndicator(isVisible: false)
                     self?.internetConnectionError?()
                     return
                 }
                 if !isReachable {
+                    self?.showIndicator(isVisible: false)
                     self?.internetConnectionError?()
                 }
             }).disposed(by: disposeBag)
@@ -64,10 +67,12 @@ class ReposListViewModel: ReposListModule.ViewModel {
     private func fetchBitbucketRepo() {
         bitbucketRepoManager.fetchRepos(success: { [weak self] model in
             guard let self = self else { return }
+            self.showIndicator(isVisible: false)
             var userModels = self.userModels.value
             userModels.append(contentsOf: model)
             self.userModels.accept(userModels)
         }, error: { [weak self] error in
+            self?.showIndicator(isVisible: false)
             self?.errorAppeared?()
         })
     }
@@ -75,10 +80,12 @@ class ReposListViewModel: ReposListModule.ViewModel {
     private func fetchGitHubRepo() {
         gitHubRepoManager.fetchRepos(success: { [weak self] model in
             guard let self = self else { return }
+            self.showIndicator(isVisible: false)
             var userModels = self.userModels.value
             userModels.append(contentsOf: model)
             self.userModels.accept(userModels)
         }, error: { [weak self] error in
+            self?.showIndicator(isVisible: false)
             self?.errorAppeared?()
         })
     }
