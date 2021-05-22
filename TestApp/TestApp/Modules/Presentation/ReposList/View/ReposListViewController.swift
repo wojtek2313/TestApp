@@ -61,7 +61,9 @@ extension ReposListViewController {
         }
         
         self.viewModel.errorAppeared = { [weak self] in
-            self?.showFetchingErrorAppeared()
+            DispatchQueue.main.async {
+                self?.showFetchingErrorAppeared()
+            }
         }
     }
     
